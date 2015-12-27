@@ -1,13 +1,15 @@
 sudo: false
 python:
-    - "2.7"
-global:
-    - secure: "bT3IiL14kld9q+I/mhs7nsZpppN0x27lS5P5aHMjVb929CQ25vONQ4rvoonR1Kt9Sbj7DRcDRsf1toExyBivIa7S0uzNLt1e/Bgw1OWITE36xjeT5DQLF+ZuUNq08OQAtAV6Ks+Zg/j2R8CELpExAKX7KUB1nIT8y8KesoNqEnGWmkLbG8oqxAO2fFRt5O+yBgGS2rRZgtdCzsIaXIjjZmj23D1IyUR1nzynIA+DfzFUrleG8TFo0K/XNudcUn429Ycc0UOXbow1D5e3vRvl6W18H2PU/6Xtna2gpJNL3x7fMPKArJAhA2bWex3E0utY1kErDkY7MDx8SpY5fv0PxvRaUEcajUSu6O+QsqnxFhmTsLx8OL+gW27cNs6dgfNyLJUS193H5OY1TUDXe02dtlOhdrFtRDlopzABUEVxCjlrxmGx3m8Nv0BFmu5rV0zxdYf6+QgbkMmYTLoyY8p/8TOPNkIdvnMjkOqFgLUvxtIKIVKug1TCPNVIHnMNPPM+kKxM/RxO1k66Ch2XjTLNPISAwYpq1FI3jlyu3U0lQc2D0grm6V8vGOPcvbM4xjlMIMlU9MkNYWQTIEjshGxqXfGQtXK32IZtfembn6N5lFUpZHLXz/KtU/7c2TnBsNy2aKfa1DxLgLh2oUqYucXeIOtCguCp+Mt15i42nnT1aZQ="
+  - '2.7'
+env:
+  global:
+    secure: Re8YqE+Brvkr+EA8zKO4dlzvd0gbXjHmtSTXuxM1/35H9zYCi2iVytOfR2I0DtR7pS7ROtqvLYwuMyRXBHdvm/jEUh5GzI5rvrMjpbwW2k02Y/2Uj4wdgh4BgU2NTCyeKNMTlaBNrxD9pJdDOtvGVWF89q4gte6E65IHWhXbfzzT7Rui9NLTq9VYj7OFvL+2Bb7s8v8pUp80uVC14VSX+VJrfnBS7xVU9m119DF6mH6w/53J3gx4qLU6c4Ff0fgKOUzDzR/2ctjjvLRxCNaNZgEGMG6C68vw6V0eU/CR3POojl98xvqmflY+42yTd10EU70l6jxXIQyg8udXiCPdZ5PxTFh8ZnA4R62SnU+q78sXEmiuDcXRklm52Xnm8lMpXJ/htk1ltPWE5NPhsh4aAxWGooy2hYAGcLWKRY4JarGHjlxplsopjcBkqv1xX+5dSZvXartfpTyqG3t7QQtVpKlzLXkZY0wdf3pFpo1Y9D+FC4qBI0ULjIzo6c2NiN/68rrV0BNK3sqFXZByeX+s5nxtcNNir7fB1dpYdOFl/4/Qtw+EEUZt/32ifTNjfYl1vYYrfVI10tEAShvSzBLRlVipLScGzkFX54AegWbtG/9RA1YUXcukWzZTM+EmE6vdxO35ol9RRn9uZQuxmi3VxMnkq9ch8FnJLbySxXtPTnU=
 install:
-    - wget $SIM_LOCATION
-    - tar -zxf sim.tar.gz
-    - export PATH=`pwd`/sim/bin:$PATH
-    - pip install git+git://github.com/chiggs/fusesoc
-    - pip install git+git://github.com/LarsAsplund/vunit
+  - wget $SIM_LOCATION
+  - tar -zxf sim.tar.gz
+  - export PATH=`pwd`/sim/bin:$PATH
+  - pip install git+git://github.com/chiggs/fusesoc
+  - pip install git+git://github.com/LarsAsplund/vunit
 script:
-    - python ./run_vunit.py -o packet_generator -x results.xml
+  - python ./run_vunit.py -o packet_generator -x results.xml
+
