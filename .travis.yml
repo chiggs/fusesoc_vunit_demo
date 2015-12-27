@@ -1,0 +1,13 @@
+sudo: false
+python:
+    - "2.7"
+global:
+    - secure: "bT3IiL14kld9q+I/mhs7nsZpppN0x27lS5P5aHMjVb929CQ25vONQ4rvoonR1Kt9Sbj7DRcDRsf1toExyBivIa7S0uzNLt1e/Bgw1OWITE36xjeT5DQLF+ZuUNq08OQAtAV6Ks+Zg/j2R8CELpExAKX7KUB1nIT8y8KesoNqEnGWmkLbG8oqxAO2fFRt5O+yBgGS2rRZgtdCzsIaXIjjZmj23D1IyUR1nzynIA+DfzFUrleG8TFo0K/XNudcUn429Ycc0UOXbow1D5e3vRvl6W18H2PU/6Xtna2gpJNL3x7fMPKArJAhA2bWex3E0utY1kErDkY7MDx8SpY5fv0PxvRaUEcajUSu6O+QsqnxFhmTsLx8OL+gW27cNs6dgfNyLJUS193H5OY1TUDXe02dtlOhdrFtRDlopzABUEVxCjlrxmGx3m8Nv0BFmu5rV0zxdYf6+QgbkMmYTLoyY8p/8TOPNkIdvnMjkOqFgLUvxtIKIVKug1TCPNVIHnMNPPM+kKxM/RxO1k66Ch2XjTLNPISAwYpq1FI3jlyu3U0lQc2D0grm6V8vGOPcvbM4xjlMIMlU9MkNYWQTIEjshGxqXfGQtXK32IZtfembn6N5lFUpZHLXz/KtU/7c2TnBsNy2aKfa1DxLgLh2oUqYucXeIOtCguCp+Mt15i42nnT1aZQ="
+install:
+    - wget $SIM_LOCATION
+    - tar -zxf sim.tar.gz
+    - export PATH=`pwd`/sim/bin:$PATH
+    - pip install git+git://github.com/chiggs/fusesoc
+    - pip install git+git://github.com/LarsAsplund/vunit
+script:
+    - python ./run_vunit.py -o packet_generator -x results.xml
