@@ -5,7 +5,7 @@ env:
   global:
     secure: Re8YqE+Brvkr+EA8zKO4dlzvd0gbXjHmtSTXuxM1/35H9zYCi2iVytOfR2I0DtR7pS7ROtqvLYwuMyRXBHdvm/jEUh5GzI5rvrMjpbwW2k02Y/2Uj4wdgh4BgU2NTCyeKNMTlaBNrxD9pJdDOtvGVWF89q4gte6E65IHWhXbfzzT7Rui9NLTq9VYj7OFvL+2Bb7s8v8pUp80uVC14VSX+VJrfnBS7xVU9m119DF6mH6w/53J3gx4qLU6c4Ff0fgKOUzDzR/2ctjjvLRxCNaNZgEGMG6C68vw6V0eU/CR3POojl98xvqmflY+42yTd10EU70l6jxXIQyg8udXiCPdZ5PxTFh8ZnA4R62SnU+q78sXEmiuDcXRklm52Xnm8lMpXJ/htk1ltPWE5NPhsh4aAxWGooy2hYAGcLWKRY4JarGHjlxplsopjcBkqv1xX+5dSZvXartfpTyqG3t7QQtVpKlzLXkZY0wdf3pFpo1Y9D+FC4qBI0ULjIzo6c2NiN/68rrV0BNK3sqFXZByeX+s5nxtcNNir7fB1dpYdOFl/4/Qtw+EEUZt/32ifTNjfYl1vYYrfVI10tEAShvSzBLRlVipLScGzkFX54AegWbtG/9RA1YUXcukWzZTM+EmE6vdxO35ol9RRn9uZQuxmi3VxMnkq9ch8FnJLbySxXtPTnU=
 install:
-  - wget $SIM_LOCATION
+  - wget -O sim.tar.gz $SIM_LOCATION
   - tar -zxf sim.tar.gz
   - export PATH=`pwd`/sim/bin:$PATH
   - pip install git+git://github.com/chiggs/fusesoc
