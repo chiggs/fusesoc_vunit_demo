@@ -12,5 +12,5 @@ install:
   - pip install git+git://github.com/chiggs/fusesoc
   - pip install git+git://github.com/LarsAsplund/vunit
 script:
-  - python ./run_vunit.py -o packet_generator -x results.xml
+  - python ./run_vunit.py -o packet_generator -x results.xml --log-level debug
 
